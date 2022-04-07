@@ -7,22 +7,23 @@
 	z-index: 3;
 	min-height: 500px;
 
-	.logo {
+.logo {
 	display: block;
 	padding: 8px 0;
 
-	img {
-	display: block;
-	margin: 8px auto;
-	width: 24px;
-	height: auto;
+		img {
+		display: block;
+		margin: 8px auto;
+		width: 24px;
+		height: auto;
 
-	&.sub-logo {
-	width: 50px;
-	}
-	}
+			&.sub-logo {
+			width: 50px;
+			}
+		}
 	}
 
+// Nav
 nav {
 	display: block;
 	text-align: center;
@@ -31,9 +32,8 @@ nav {
 	top: 50%;
 	margin-top: -120px;
 	width: 100%;
-	}
 
-	a {
+a {
 		font-size: 22px;
 		color: #4d4d4e;
 		display: block;
@@ -41,6 +41,89 @@ nav {
 		height: 51px;
 		position: relative;
 		text-decoration: none;
-	} 
+
+	i {
+		transition: all .3s ease-out;
+	}
+
+	&:hover {
+		color: #ffd700;
+
+		svg {
+			opacity: 0;
+		}
+
+		&:after {
+			opacity: 1;
+		}
+	}
+
+
+	&:after {
+		content: '';
+		font-size: 9px;
+		letter-spacing: 2px;
+		position: absolute;
+		bottom: 0;
+		display: block;
+		width: 100%;
+		text-align: center;
+		opacity: 0;
+		transition: all .3s ease-out;
+	}
+
+	&:first-child {
+		&::after {
+			content: "HOME";
+		}
+	}
+}
+
+a.about-link {
+	&:after {
+		content: "ABOUT";
+	}
+}
+
+a.contact-link {
+	&:after {
+		content: "CONTACT";
+	}
+}
+
+a.active {
+	svg {
+		color: #ffd700;
+	}
+}
+}
+
+// Unord.List
+
+ul {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	display: block;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+	margin: 0;
+
+	li {
+		a {
+			padding: 7px 0;
+			display: block;
+			font-size: 15px;
+			line-height: 16px;
+			color: #4d4d4e;
+
+			&:hover svg {
+				color: #ffd700;
+			}
+		}
+	}
+}
+
 }
 
